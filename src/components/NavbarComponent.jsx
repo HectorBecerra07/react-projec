@@ -1,3 +1,4 @@
+import ButtonNav from "./ButtonNav";
 import CartWidgetIcons from "./CartWidgeIcons";
 
 const NavbarComponent = () => {
@@ -10,8 +11,11 @@ const NavbarComponent = () => {
                 <a className="navlink" href="">Pc Gamer</a>
                 <a className="navlink" href="">Nosotros</a>
             </div>
-            
+            <div>
             <CartWidgetIcons/>
+            <ButtonNav/>
+            </div>
+            
         </nav>
     );
 };

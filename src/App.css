@@ -36,3 +36,13 @@
     height: 20px;
     color: #ffffff;
 }
+  .badge {
+    background-color: #6c757d;
+    color: white;
+    padding: 4px 8px;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  
