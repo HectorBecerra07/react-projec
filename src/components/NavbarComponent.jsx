@@ -1,21 +1,21 @@
 import ButtonNav from "./ButtonNav";
 import CartWidgetIcons from "./CartWidgeIcons";
+import { NavLink } from "react-router-dom";
 
 const NavbarComponent = () => {
     return (
         <nav className="NavContainer">
-            <a className="Title-Nav" href="">NexusShop</a>
+            <NavLink className="Title-Nav" to="/category/inicio">NexusShop</NavLink>
             <div className="NavLinks">
-                <a className="navlink" href="">Inicio</a>
-                <a className="navlink" href="">Laptops</a>
-                <a className="navlink" href="">Pc Gamer</a>
-                <a className="navlink" href="">Nosotros</a>
+                <NavLink className="navlink" to="/category/inicio">Inicio</NavLink>
+                <NavLink className="navlink" to="/category/Laptops">Laptops</NavLink>
+                <NavLink className="navlink" to="/category/PC-Gamer">Pc Gamer</NavLink>
             </div>
             <div>
-            <CartWidgetIcons/>
             <ButtonNav/>
+                <CartWidgetIcons />
+                
             </div>
-            
         </nav>
     );
 };

@@ -1,14 +1,11 @@
 import { GrCart } from "react-icons/gr";
 
-
 const CartWidgetIcons = () => {
     return (
         <div>
-        <GrCart className="CartWidget" />
-    </div>
-
-    ) 
+            <GrCart className="CartWidget" />
+        </div>
+    )
 }
 
-
-export default CartWidgetIcons
+export default CartWidgetIcons;
