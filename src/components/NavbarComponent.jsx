@@ -1,4 +1,3 @@
-import ButtonNav from "./ButtonNav";
 import CartWidgetIcons from "./CartWidgeIcons";
 import { NavLink } from "react-router-dom";
 
@@ -12,7 +11,6 @@ const NavbarComponent = () => {
                 <NavLink className="navlink" to="/category/PC-Gamer">Pc Gamer</NavLink>
             </div>
             <div>
-            <ButtonNav/>
                 <CartWidgetIcons />
                 
             </div>
