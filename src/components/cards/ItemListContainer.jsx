@@ -1,6 +1,9 @@
+// src/components/ItemListContainer.js
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getProducts } from "../mock/asyncData"; 
+import { getProducts } from "../../service/productsService.js";
+
+
 import ItemList from "./ItemList";
 
 const ItemListContainer = ({ greeting }) => {
@@ -30,6 +33,4 @@ const ItemListContainer = ({ greeting }) => {
   );
 };
 
-
 export default ItemListContainer;
-

@@ -1,6 +1,9 @@
+// src/components/ItemDetailContainer.js
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProducts } from "./mock/asyncData";
+import { getProductById } from "../service/productsService.js"; // igual
+
+
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
@@ -10,11 +13,8 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     setLoading(true);
-    getProducts()
-      .then((res) => {
-        const foundProduct = res.find((prod) => prod.id === id);
-        setProduct(foundProduct);
-      })
+    getProductById(id)
+      .then((data) => setProduct(data))
       .catch((error) => console.error("Error obteniendo el producto:", error))
       .finally(() => setLoading(false));
   }, [id]);
@@ -27,4 +27,3 @@ const ItemDetailContainer = () => {
 };
 
 export default ItemDetailContainer;
-

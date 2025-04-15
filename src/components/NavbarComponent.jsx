@@ -1,5 +1,5 @@
-import CartWidgetIcons from "./CartWidgeIcons";
 import { NavLink } from "react-router-dom";
+import CartDropdown from "./CartDropdown";
 
 const NavbarComponent = () => {
     return (
@@ -11,8 +11,7 @@ const NavbarComponent = () => {
                 <NavLink className="navlink" to="/category/PC-Gamer">Pc Gamer</NavLink>
             </div>
             <div>
-                <CartWidgetIcons />
-                
+                <CartDropdown />
             </div>
         </nav>
     );

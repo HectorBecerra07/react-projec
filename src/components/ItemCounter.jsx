@@ -1,15 +1,12 @@
-import React, { useState } from "react";
-import { useCart } from "./CartContext"; 
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-
-function ItemCounter({ initialStock }) {
+import { useCart } from './CartContext';
+import { Button, Form } from 'react-bootstrap';
+import { useState } from 'react';
+function ItemCounter({ product }) {
   const [count, setCount] = useState(1);
-  const [stock] = useState(initialStock);
-  const { addToCart } = useCart(); 
+  const { addToCart } = useCart();
 
   const handleIncrease = () => {
-    if (count < stock) {
+    if (count < product.stock) {
       setCount(count + 1);
     }
   };
@@ -21,7 +18,7 @@ function ItemCounter({ initialStock }) {
   };
 
   const handleAddToCart = () => {
-    addToCart(count); 
+    addToCart(product, count);
     setCount(1);
   };
 
@@ -44,18 +41,21 @@ function ItemCounter({ initialStock }) {
       <Button
         variant="outline-primary"
         onClick={handleIncrease}
-        disabled={count === stock}
+        disabled={count === product.stock}
         className="mx-1"
       >
         +
       </Button>
       <div className="ms-3">
-        <Button variant="primary" onClick={handleAddToCart}>
+        <Button 
+          variant="primary" 
+          onClick={handleAddToCart}
+          disabled={product.stock === 0}
+        >
           Agregar al carrito
         </Button>
       </div>
     </div>
   );
 }
-
 export default ItemCounter;

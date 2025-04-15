@@ -1,20 +1,23 @@
-import React from "react";
-
 function ItemDetail({ product }) {
+  const { addToCart } = useCart();
+
   if (!product) {
-    return <p>Producto no encontrado</p>;
+    return <div>Producto no encontrado</div>;
   }
 
   return (
-    <div>
-      <h2>Detalle del Producto</h2>
-      <p><strong>Nombre:</strong> {product.name}</p>
-      <p><strong>Precio:</strong> ${product.price}</p>
-      <p><strong>Descripción:</strong> {product.description}</p>
-      <p><strong>Stock:</strong> {product.stock} unidades</p>
+    <div className="item-detail-container">
+      <div className="item-detail-image">
+        <img src={product.img} alt={product.name} />
+      </div>
+      <div className="item-detail-info">
+        <h2>{product.name}</h2>
+        <p>{product.description}</p>
+        <p>Precio: ${product.price}</p>
+        <p>Stock disponible: {product.stock}</p>
+        <ItemCounter product={product} />
+      </div>
     </div>
   );
 }
-
 export default ItemDetail;
-
